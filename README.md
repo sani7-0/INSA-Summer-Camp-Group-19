@@ -3,6 +3,8 @@
 **EduConnect** is a student-centric social media platform designed to **empower learning**, **spark collaboration**, and **share educational victories**. Inspired by platforms like ALX’s portal, this project was built as part of the INSA Summer Tech Camp to showcase modular design, real-world teamwork, and educational impact.
 
 ---
+## Problem Statement
+Many students struggle to find a reliable, distraction-free space online to connect academically, ask questions, and share learning resources. Traditional social platforms are often too noisy, and educational forums can feel outdated or inaccessible. EduConnect addresses this by providing a modern, focused environment tailored to the academic and collaborative needs of students.
 
 ## 🚀 Features
 
