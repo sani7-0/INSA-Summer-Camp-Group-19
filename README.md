@@ -50,7 +50,7 @@ Many students struggle to find a reliable, distraction-free space online to conn
 | ------------------ | ----------------------- | --------------------------------------- |
 |  Project Lead     | Fetehadin               | Coordination, planning, repo management |
 |  Frontend Dev     | Yehabesha and Merwa     | UI implementation,       |
-|  Backend Dev      | Fetehadin and Dderesani | API endpoints, DB models,API integration|
+|  Backend Dev      | Fetehadin and Deresani | API endpoints, DB models,API integration|
 |  UI/UX Designer   | Merwa and Yehabesha     | Wireframes, usability    |
 |  Docs & QA        | Fetehadin               | Setup docs, testing, code quality checks|
 
