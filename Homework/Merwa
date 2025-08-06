@@ -1,0 +1,79 @@
+
+              Over view of HTTP and HTTPS:
+1.HTTP (HyperText Transfer Protocol) is how our browser talks to websites.
+When we open a page like http://example.com, you’re basically saying:
+
+“Hey server, can I please see your homepage?”
+
+The server replies with the website data — like HTML, images, and videos.
+
+2.HTTPS is the secure version of HTTP.
+It encrypts everything between our browser and the website so no one can spy on what we're doing.
+
+It shows a lock icon in our browser
+
+It protects our passwords, messages, and private info
+
+It's required for login forms, payments, and most modern browser features
+
+So instead of just saying:
+
+“Hey server, give me the homepage.”
+
+we're saying:
+
+“Let’s talk privately. No one else can see our conversation.”
+
+3. And when we ask Why the Web Switched from HTTP to HTTPS
+The switch happened because HTTP is no longer safe. Hackers could eavesdrop on people using public Wi-Fi or steal data.
+
+Around 2014–2020, big players like Google and Mozilla started pushing HTTPS:
+
+Google gave HTTPS sites a better search ranking
+
+Chrome and Firefox started labeling HTTP sites as “Not Secure”
+
+Free tools like Let’s Encrypt made HTTPS easy for everyone
+
+Now, most of the internet runs on HTTPS — and that’s a good thing.
+
+4.Different HTTP Methods
+When your browser talks to a website, it tells the server what kind of action it wants to take.
+
+Here are the main HTTP methods:
+
+-GET – Ask for data (like visiting a page)
+
+-POST – Send new data (like submitting a form)
+
+-PUT – Replace something (like updating a profile)
+
+-PATCH – Edit part of something
+
+-DELETE – Remove something
+
+-OPTIONS – Ask the server what’s allowed
+
+they are  like the verbs of the internet.
+
+5. HTTP Status Codes – What the Server Says Back
+Every time we visit a site, the server responds with a code to say what happened:
+
+200 OK – Everything worked
+
+404 Not Found – Page doesn’t exist
+
+500 Server Error – Something broke on their side
+
+403 Forbidden – You’re not allowed in
+
+6. The Versions of HTTP
+Just like apps and phones get updates, so does HTTP.
+
+Version	What Changed
+HTTP/1.0==>The original, simple version (1 request at a time)
+HTTP/1.1==>Added speed, caching, and better reuse of connections
+HTTP/2==>Made everything much faster — allows multiple requests at once
+HTTP/3==>Built for the modern web — faster, safer, and great for mobile devices
+==>Most modern websites now run on HTTP/2 or HTTP/3 to give users the fastest possible experience.
+
