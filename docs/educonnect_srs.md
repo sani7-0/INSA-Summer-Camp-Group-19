@@ -25,7 +25,6 @@
     5.1 [Performance Requirements](#51-performance-requirements)  
     5.2 [Safety Requirements](#52-safety-requirements)  
     5.3 [Security Requirements](#53-security-requirements)  
-    5.4 [Software Quality Attributes](#54-software-quality-attributes)  
 6. [Appendix](#6-appendix)  
 
 ---
@@ -139,9 +138,13 @@ It integrates with educational data sources where applicable and includes an AI 
 #### 3.1.4 Educational Resource Sharing
 - **FR4.1:** Upload/share resources  
 - **FR4.2:** Secure storage  
-- **FR4.3:** Admin approval  
+- **FR4.3:** Admin approval
+#### 3.1.14 Social Interactions
+- **FR14.1:* Students can follow others to view posts.
+- **FR14.2:* System supports posting, liking, and commenting.
+- **FR14.3:* Administrators moderate social interactions. 
 
-... *(Continue with all requirements as listed in your provided text)*  
+
 
 ---
 
@@ -178,14 +181,8 @@ It integrates with educational data sources where applicable and includes an AI 
 - **NFR3.1:** Password encryption  
 - **NFR3.2:** 2FA  
 - **NFR3.3:** RBAC  
-- **NFR3.4:** AI & manual moderation  
-- **NFR3.5:** GDPR/FERPA compliance  
-- **NFR3.6:** Auto-logout after 15 minutes inactivity  
-
-### 5.4 Software Quality Attributes
-- <10-minute learning curve  
-- 99.9% uptime  
-- Strong moderation  
+- **NFR3.4:** AI & manual moderation   
+- **NFR3.5:** Auto-logout after 15 minutes inactivity
 
 ---
 
