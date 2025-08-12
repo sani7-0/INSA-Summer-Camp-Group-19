@@ -26,10 +26,8 @@ Many Ethiopian students lack a reliable, distraction-free online space to connec
 - 🤝 Mentorship System – Connect with mentors (API-based or external).
 - 🎯 Daily Challenges & Quiz Games – Interactive learning boosts.
 - 👥 Study Groups – Form or join group chats with file sharing.
-- 📊 Student Analytics – Track activity and receive study recommendations.
 - 💬 Social Interactions – Follow peers, like posts, boost collaboration.
-- 🤖 AI Assistant – GPT-powered tool to help students answer FAQs and receive academic suggestions in real-time.
-
+- 🤖 AI Assistant – 
 ---
 
 ## 🧱 Tech Stack
