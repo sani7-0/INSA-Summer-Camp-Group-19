@@ -1,1 +1,17 @@
+HEAD
 db.sqlite3
+=======
+backend/edu_env/
+__pycache__/
+*.pyc
+frontend/node_modules/
+frontend/build/
+frontend/.env
+backend/.env
+.DS_Store
+Thumbs.db
+*.idea/
+*.vscode/
+*.log
+*.sqlite
+d846cdb2615689f4ff3a611ad4ccbbcba1f22c27
