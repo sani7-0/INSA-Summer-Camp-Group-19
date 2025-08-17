@@ -11,7 +11,7 @@ function SignUpPage() {
     >
       <div className="flex flex-col md:flex-row max-w-4xl w-full bg-gray-800 rounded-lg shadow-lg overflow-hidden">
         {/* Left Form Section */}
-        <div className="w-full md:w-1/2 bg-gray-100 p-8 flex flex-col justify-center rounded-l-lg md:rounded-l-none md:rounded-l-lg">
+        <div className="w-full md:w-1/2 bg-gray-100 p-8 flex flex-col justify-center rounded-l-lg md:rounded-l-none ">
           <h2 className="text-2xl font-bold mb-2 text-center">Sign up</h2>
           <p className="mb-6 text-center text-sm text-gray-600">sign up to continue</p>
           <form className="flex flex-col space-y-4">
@@ -35,7 +35,7 @@ function SignUpPage() {
             />
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-colors"
+              className="bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] text-white font-semibold py-3 rounded-lg transition-colors"
             >
               sign up
             </button>
