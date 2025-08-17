@@ -25,7 +25,7 @@ import {
 
 // Mock data - in real app this would come from API
 const mockUserData = {
-  name: "Alex Johnson",
+  name: "John Michael",
   avatar: "/placeholder.svg?height=40&width=40",
   currentStreak: 12,
   totalPoints: 2450,
@@ -77,7 +77,7 @@ const mockLeaderboard = [
   { rank: 1, name: "Emma Wilson", points: 3200, avatar: "/placeholder.svg?height=32&width=32" },
   { rank: 2, name: "Michael Chen", points: 2890, avatar: "/placeholder.svg?height=32&width=32" },
   { rank: 3, name: "Sarah Davis", points: 2650, avatar: "/placeholder.svg?height=32&width=32" },
-  { rank: 4, name: "Alex Johnson", points: 2450, avatar: "/placeholder.svg?height=32&width=32", isCurrentUser: true },
+  { rank: 4, name: "John Michael", points: 2450, avatar: "/placeholder.svg?height=32&width=32", isCurrentUser: true },
   { rank: 5, name: "David Kim", points: 2380, avatar: "/placeholder.svg?height=32&width=32" },
 ]
 
@@ -123,7 +123,7 @@ export default function StudyWinPage() {
   return (
     <div className="pt-20 p-6 min-h-screen bg-gray-100 relative font-sans text-gray-800">
       {/* Header */}
-      <header className="rounded-2xl py-6 px-6 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] backdrop-blur-md shadow-lg mb-8">
+      <header className="rounded-2xl py-3 px-6 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] backdrop-blur-md shadow-lg mb-8">
         <div className="max-w-6xl mx-auto px-4 py-4 text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">Study Win</h1>
           <h5 className="text-xl text-indigo-100">Track your progress, earn rewards, and achieve your learning goals!</h5>
@@ -219,8 +219,8 @@ export default function StudyWinPage() {
                         {mockUserData.weeklyProgress}/{mockUserData.weeklyGoal} hours
                       </span>
                     </div>
-                    <Progress value={(mockUserData.weeklyProgress / mockUserData.weeklyGoal) * 100} className="h-3" />
-                    <p className="text-sm text-muted-foreground">
+                    <Progress value={(mockUserData.weeklyProgress / mockUserData.weeklyGoal) * 100} className="h-3 bg-gray-200 [&>div]:bg-indigo-500" />
+                    <p className="text-sm text-muted-foreground ">
                       Great progress! You're {mockUserData.weeklyGoal - mockUserData.weeklyProgress} hours away from
                       your weekly goal.
                     </p>
@@ -239,17 +239,17 @@ export default function StudyWinPage() {
                 <CardContent>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <CheckCircle className="h-4 w-4 text-indigo-500" />
                       <span className="text-sm">Completed Algebra Quiz</span>
                       <span className="text-xs text-muted-foreground ml-auto">2h ago</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Play className="h-4 w-4 text-blue-500" />
+                      <Play className="h-4 w-4 text-indigo-500" />
                       <span className="text-sm">Watched Physics Video</span>
                       <span className="text-xs text-muted-foreground ml-auto">4h ago</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Trophy className="h-4 w-4 text-yellow-500" />
+                      <Trophy className="h-4 w-4 text-indigo-500" />
                       <span className="text-sm">Earned Study Streak Badge</span>
                       <span className="text-xs text-muted-foreground ml-auto">1d ago</span>
                     </div>
@@ -281,7 +281,7 @@ export default function StudyWinPage() {
                         <span>Progress</span>
                         <span>{challenge.progress}%</span>
                       </div>
-                      <Progress value={challenge.progress} className="h-2" />
+                      <Progress value={challenge.progress} className="h-2 bg-gray-200 [&>div]:bg-indigo-500" />
 
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4 text-sm text-muted-foreground">
@@ -300,8 +300,8 @@ export default function StudyWinPage() {
                         </div>
 
                         {!joinedChallenges.has(challenge.id) && challenge.progress !== 100 && (
-                          <Button size="sm" onClick={() => handleJoinChallenge(challenge.id)} className="gap-2">
-                            <Target className="h-4 w-4" />
+                          <Button size="sm" onClick={() => handleJoinChallenge(challenge.id)} className="gap-2 bg-indigo-500">
+                            <Target className="h-4 w-4 bg-indigo-500" />
                             Join Challenge
                           </Button>
                         )}
@@ -326,9 +326,9 @@ export default function StudyWinPage() {
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-4">
                         <div className="p-2 rounded-lg bg-blue-100 dark:bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)]">
-                          {material.type === "video" && <Play className="h-5 w-5 text-blue-600" />}
-                          {material.type === "quiz" && <BookOpen className="h-5 w-5 text-blue-600" />}
-                          {material.type === "article" && <BookOpen className="h-5 w-5 text-blue-600" />}
+                          {material.type === "video" && <Play className="h-5 w-5 text-indigo-600" />}
+                          {material.type === "quiz" && <BookOpen className="h-5 w-5 text-indigo-600" />}
+                          {material.type === "article" && <BookOpen className="h-5 w-5 text-indigo-600" />}
                         </div>
                         <div>
                           <h3 className="font-semibold">{material.title}</h3>
@@ -342,14 +342,14 @@ export default function StudyWinPage() {
                         </div>
                       </div>
 
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2 bg-indigo-500">
                         {material.completed ? (
-                          <Badge className="gap-1">
-                            <CheckCircle className="h-3 w-3" />
+                          <Badge className="gap-1 bg-indigo-500">
+                            <CheckCircle className="h-3 w-3  bg-indigo-500" />
                             Completed
                           </Badge>
                         ) : (
-                          <Button size="sm" onClick={() => handleCompleteResource(material.id)} className="gap-2">
+                          <Button size="sm" onClick={() => handleCompleteResource(material.id)} className="gap-2 bg-indigo-500">
                             Start
                           </Button>
                         )}
@@ -366,7 +366,7 @@ export default function StudyWinPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Crown className="h-5 w-5 text-yellow-500" />
+                  <Crown className="h-5 w-5 text-indigo-500" />
                   Top Learners This Week
                 </CardTitle>
               </CardHeader>
@@ -377,7 +377,7 @@ export default function StudyWinPage() {
                       key={user.rank}
                       className={`flex items-center gap-4 p-3 rounded-lg ${
                         user.isCurrentUser
-                          ? "bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800"
+                          ? "bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-indigo-800"
                           : "hover:bg-gray-50 dark:hover:bg-gray-800"
                       }`}
                     >
@@ -420,8 +420,8 @@ export default function StudyWinPage() {
                     <div className="text-4xl mb-3">{badge.icon}</div>
                     <h3 className="font-semibold mb-2">{badge.name}</h3>
                     {badge.earned ? (
-                      <Badge className="gap-1">
-                        <Award className="h-3 w-3" />
+                      <Badge className="gap-1 bg-indigo-500">
+                        <Award className="h-3 w-3 bg-indigo-500" />
                         Earned
                       </Badge>
                     ) : (

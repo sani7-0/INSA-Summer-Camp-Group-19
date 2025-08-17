@@ -87,7 +87,7 @@ export default function ContestsPage() {
     <div className="min-h-screen bg-white pt-20 p-6 ">
       {/* Header Section */}
       
-      <header className="relative bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] p-6 rounded-2xl text-white text-center py-6 px-6 overflow-hidden">
+      <header className="relative bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)]  rounded-2xl text-white text-center py-6 px-6 overflow-hidden">
         {/* Code pattern overlay */}
         <div className="absolute inset-0 opacity-10">
           <div
