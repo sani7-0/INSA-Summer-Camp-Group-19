@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import myLogo from '../assets/mylogo.png';
-
 function EduConnectFullScreenHeader() {
   const [profileMenu, setProfileMenu] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
@@ -11,7 +11,7 @@ function EduConnectFullScreenHeader() {
   };
 
   return (
-    <div className="w-full bg-black text-white font-sans" style={{ height: '90px' }}>
+    <div className=" fixed top-0 left-0 w-full bg-black text-white font-sans z-50" style={{ height: '90px' }}>
       {/* Top Header */}
       <div className="flex items-center justify-between px-4 py-2 h-full relative" style={{ height: '90px' }}>
         {/* Left: Logo, text, and background image */}
@@ -53,8 +53,8 @@ function EduConnectFullScreenHeader() {
             {/* Resources dropdown */}
             <div className="absolute hidden group-hover:flex flex-col bg-white text-black mt-2 rounded shadow-lg w-48 z-10">
               <a className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" href="#">Tutorials</a>
-              <a className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" href="#">Articles</a>
-              <a className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition">Study Wins</a>
+             
+              <Link className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" to='/Studywin'>Study Wins</Link>
             </div>
           </div>
 
@@ -69,8 +69,8 @@ function EduConnectFullScreenHeader() {
             {/* Explore dropdown */}
             <div className="absolute hidden group-hover:flex flex-col bg-white text-black mt-2 rounded shadow-lg w-48 z-10">
               <a className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" href="#">Opportunities</a>
-              <a className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" href="#">Events</a>
-              <a className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition">Saved</a>
+              
+              <Link className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" to="/Saved">Saved</Link>
             </div>
           </div>
 
@@ -84,15 +84,15 @@ function EduConnectFullScreenHeader() {
             </button>
             {/* Community dropdown */}
             <div className="absolute hidden group-hover:flex flex-col bg-white text-black mt-2 rounded shadow-lg w-48 z-10">
-              <a className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" href="#">Discussion</a>
+              <Link className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" to="/Discussion">Discussion</Link>
               <a className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" href="#">Friends</a>
-              <a className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition">Groups</a>
+
             </div>
           </div>
 
           {/* Other links */}
-          <a href="#" className="px-4 py-2 hover:bg-gray-700 rounded h-full flex items-center">Contests</a>
-          <a href="#" className="px-4 py-2 hover:bg-gray-700 rounded h-full flex items-center">Events</a>
+          
+          <Link to="/Events" className="px-4 py-2 hover:bg-gray-700 rounded h-full flex items-center">Events</Link>
         </div>
 
         {/* Right icons and search */}
@@ -109,7 +109,7 @@ function EduConnectFullScreenHeader() {
             {/* Search icon button */}
             <button
               onClick={handleSearch}
-              className="p-2 bg-blue-600 hover:bg-blue-700 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300"
+              className="p-2 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)]  hover:bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)]  rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300"
               aria-label="Search"
             >
               {/* Magnifying glass icon SVG */}
@@ -150,14 +150,14 @@ function EduConnectFullScreenHeader() {
               onClick={() => setProfileMenu(!profileMenu)}
             >
               {/* Profile icon */}
-              <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center text-white font-semibold">
+              <div className="w-8 h-8 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] rounded-full flex items-center justify-center text-white font-semibold">
                 U
               </div>
             </button>
             {profileMenu && (
               <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg z-20">
-                <a href="#" className="block px-4 py-2 hover:bg-gray-200">View Profile</a>
-                <a href="#" className="block px-4 py-2 hover:bg-gray-200">Edit Profile</a>
+                <Link to="/Profile" className="block px-4 py-2 hover:bg-gray-200">View profile</Link>
+                
                 <a href="#" className="block px-4 py-2 hover:bg-gray-200">My Resources</a>
                 <a href="#" className="block px-4 py-2 hover:bg-gray-200">My Events</a>
                 <a href="#" className="block px-4 py-2 hover:bg-gray-200">Settings</a>

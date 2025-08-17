@@ -51,7 +51,7 @@ function PasswordResetModal() {
           </Link>
         </div>
         {/* Send Reset Link Button */}
-        <button className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-xl shadow-lg focus:outline-none transition duration-300">
+        <button className="w-full mt-6 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] text-white font-semibold py-3 px-4 rounded-xl shadow-lg focus:outline-none transition duration-300">
           Send Reset Link
         </button>
       </div>
