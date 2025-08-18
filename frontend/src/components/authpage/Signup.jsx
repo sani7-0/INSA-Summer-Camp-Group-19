@@ -41,7 +41,7 @@ function SignUpPage() {
             </button>
           </form>
           <div className="mt-4 text-center text-sm text-gray-600">
-            Already have an account? <Link to="/Signin" className="text-blue-500 hover:underline">Log In</Link>
+            Already have an account? <Link to="/sign-in" className="text-blue-500 hover:underline">Log In</Link>
           </div>
           <div className="my-6 border-t border-gray-300"></div>
           <div className="text-center mb-2 text-sm text-gray-600">ACCESS QUICKLY</div>

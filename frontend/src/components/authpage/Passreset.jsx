@@ -46,7 +46,7 @@ function PasswordResetModal() {
         />
         {/* Return to Sign-in Link */}
         <div className="mt-3 flex justify-end">
-          <Link to="/Signin" className="text-blue-600 text-sm hover:underline">
+          <Link to="/sign-in" className="text-blue-600 text-sm hover:underline">
             Return to Sign in
           </Link>
         </div>
