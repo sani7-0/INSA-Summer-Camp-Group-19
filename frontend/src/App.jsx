@@ -25,12 +25,12 @@ import RightSidebar from "./components/rightsidebar.jsx";
 import Opportunities from "./components/opportunies.jsx";
 import Frends from "./components/friends.jsx";
 import Group from './components/Groups.jsx';
-{/*
+
 import Profile from '../src/components/Profile.jsx'
 import Discussion from '../src/components/Discussion.jsx'
 import Saved, { SavedMessagesProvider } from '../src/components/Saved.jsx'
 import Events from '../src/components/Events.jsx'
-import Studywin from '../src/components/Studywin.jsx'*/}
+import Studywin from '../src/components/Studywin.jsx'
 
 // Dashboard layout
 const DashboardLayout = ({ user }) => (
@@ -96,12 +96,12 @@ function AppLayout({ isLoggedIn, setIsLoggedIn }) {
         <Route path="/opportunites" element={<Opportunities />} />
         <Route path="/frends" element={<Frends />} />
         <Route path="/groups" element={<Group />} />
-        {/*this is from merwa
+        
          <Route path ="/Profile" element={<Profile/>}/>
          <Route path ="/Events" element={<Events/>}/>
       <Route path ="/Discussion" element={<Discussion/>}/>
       <Route path ="/Saved" element={<SavedMessagesProvider><Saved/></SavedMessagesProvider>}/>
-      <Route path ="/Studywin" element={<Studywin/>}/>*/}
+      <Route path ="/Studywin" element={<Studywin/>}/>
 
         {/* Auth pages */}
         <Route path="/sign-up" element={<Signup />} />
