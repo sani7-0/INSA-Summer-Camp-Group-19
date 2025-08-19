@@ -1,17 +1,69 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import myLogo from '../assets/mylogo.png';
-function EduConnectFullScreenHeader() {
-  const [profileMenu, setProfileMenu] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = () => {
-    // Implement your search logic here
-    alert(`Searching for: ${searchTerm}`);
+function EduConnectFullScreenHeader({ user }) {
+  const [profileMenu, setProfileMenu] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [notificationsOpen, setNotificationsOpen] = useState(false);
+
+  // Mock data for notifications
+  const [notifications, setNotifications] = useState([
+    {
+      id: 1,
+      senderName: "John Doe",
+      senderAvatar: "https://i.pravatar.cc/150?img=1",
+      message: "Hi! Let's connect.",
+      timestamp: "2h ago",
+      isRead: false,
+      senderProfileUrl: "/profile/john-doe",
+    },
+    {
+      id: 2,
+      senderName: "Sarah Lee",
+      senderAvatar: "https://i.pravatar.cc/150?img=2",
+      message: "Looking to join your study group.",
+      timestamp: "1d ago",
+      isRead: false,
+      senderProfileUrl: "/profile/sarah-lee",
+    },
+    {
+      id: 3,
+      senderName: "Mike Ross",
+      senderAvatar: "https://i.pravatar.cc/150?img=4",
+      message: "mentioned you in a comment.",
+      timestamp: "3d ago",
+      isRead: true,
+      senderProfileUrl: "/profile/mike-ross",
+    },
+  ]);
+
+  const unreadCount = notifications.filter((n) => !n.isRead).length;
+
+  const handleNotificationClick = (id) => {
+    setNotifications(
+      notifications.map((notification) =>
+        notification.id === id ? { ...notification, isRead: true } : notification
+      )
+    );
   };
 
+  const handleSearch = () => {
+    console.log(`Searching for: ${searchTerm}`);
+  };
+
+  const defaultUser = {
+    name: "John Doe",
+    avatar: "https://i.pravatar.cc/150?img=3",
+  };
+
+  const currentUser = user || defaultUser;
+
   return (
-    <div className=" fixed top-0 left-0 w-full bg-black text-white font-sans z-50" style={{ height: '90px' }}>
+    <div className="fixed top-0 left-0 w-full bg-black text-white font-sans z-50" style={{ height: '90px' }}>
       {/* Top Header */}
       <div className="flex items-center justify-between px-4 py-2 h-full relative" style={{ height: '90px' }}>
         {/* Left: Logo, text, and background image */}
@@ -40,7 +92,7 @@ function EduConnectFullScreenHeader() {
         {/* Center: Navigation */}
         <div className="flex-1 flex justify-center space-x-4 overflow-x-auto px-4 h-full" style={{ height: '90px' }}>
           {/* Home */}
-          <a href="#" className="px-4 py-2 hover:bg-gray-700 rounded h-full flex items-center">Home</a>
+          <Link to="/" className="px-4 py-2 hover:bg-gray-700 rounded h-full flex items-center">Home</Link>
 
           {/* Resources with dropdown */}
           <div className="relative group h-full flex items-center">
@@ -53,7 +105,6 @@ function EduConnectFullScreenHeader() {
             {/* Resources dropdown */}
             <div className="absolute hidden group-hover:flex flex-col bg-white text-black mt-2 rounded shadow-lg w-48 z-10">
               <a className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" href="#">Tutorials</a>
-             
               <Link className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" to='/Studywin'>Study Wins</Link>
             </div>
           </div>
@@ -68,8 +119,7 @@ function EduConnectFullScreenHeader() {
             </button>
             {/* Explore dropdown */}
             <div className="absolute hidden group-hover:flex flex-col bg-white text-black mt-2 rounded shadow-lg w-48 z-10">
-              <a className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" href="#">Opportunities</a>
-              
+              <Link className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" to="/opportunites">Opportunities</Link>
               <Link className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" to="/Saved">Saved</Link>
             </div>
           </div>
@@ -85,13 +135,11 @@ function EduConnectFullScreenHeader() {
             {/* Community dropdown */}
             <div className="absolute hidden group-hover:flex flex-col bg-white text-black mt-2 rounded shadow-lg w-48 z-10">
               <Link className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" to="/Discussion">Discussion</Link>
-              <a className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" href="#">Friends</a>
-
+              <Link className="px-4 py-2 hover:bg-gray-200 hover:text-blue-600 transition" to="/frends">Friends</Link>
             </div>
           </div>
 
           {/* Other links */}
-          
           <Link to="/Events" className="px-4 py-2 hover:bg-gray-700 rounded h-full flex items-center">Events</Link>
         </div>
 
@@ -109,10 +157,9 @@ function EduConnectFullScreenHeader() {
             {/* Search icon button */}
             <button
               onClick={handleSearch}
-              className="p-2 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)]  hover:bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)]  rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300"
+              className="p-2 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300"
               aria-label="Search"
             >
-              {/* Magnifying glass icon SVG */}
               <svg
                 className="w-4 h-4 text-white"
                 fill="none"
@@ -130,11 +177,55 @@ function EduConnectFullScreenHeader() {
           </div>
 
           {/* Notifications */}
-          <button className="p-2 rounded hover:bg-gray-700" title="Notifications">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.003 6.003 0 00-4-5.659V4a2 2 0 10-4 0v1.341C8.67 6.165 8 7.388 8 8.75V14c0 .538-.214 1.055-.595 1.436L6 17h5" />
-            </svg>
-          </button>
+          <div className="relative">
+            <button 
+              className="p-2 rounded hover:bg-gray-700 relative" 
+              title="Notifications"
+              onClick={() => setNotificationsOpen(!notificationsOpen)}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.003 6.003 0 00-4-5.659V4a2 2 0 10-4 0v1.341C8.67 6.165 8 7.388 8 8.75V14c0 .538-.214 1.055-.595 1.436L6 17h5" />
+              </svg>
+              {unreadCount > 0 && (
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                  {unreadCount}
+                </span>
+              )}
+            </button>
+            
+            {/* Notifications dropdown */}
+            {notificationsOpen && (
+              <div className="absolute right-0 mt-2 w-80 bg-white text-black rounded shadow-lg z-20 max-h-96 overflow-y-auto">
+                <div className="p-4 border-b">
+                  <h3 className="font-semibold">Notifications</h3>
+                </div>
+                {notifications.map((notification) => (
+                  <div
+                    key={notification.id}
+                    className={`p-4 border-b hover:bg-gray-50 cursor-pointer ${!notification.isRead ? 'bg-blue-50' : ''}`}
+                    onClick={() => handleNotificationClick(notification.id)}
+                  >
+                    <div className="flex items-start space-x-3">
+                      <img
+                        src={notification.senderAvatar}
+                        alt={notification.senderName}
+                        className="w-8 h-8 rounded-full"
+                      />
+                      <div className="flex-1">
+                        <p className="text-sm">
+                          <span className="font-semibold">{notification.senderName}</span> {notification.message}
+                        </p>
+                        <p className="text-xs text-gray-500 mt-1">{notification.timestamp}</p>
+                      </div>
+                      {!notification.isRead && (
+                        <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
 
           {/* Messages */}
           <button className="p-2 rounded hover:bg-gray-700" title="Messages">
@@ -151,13 +242,12 @@ function EduConnectFullScreenHeader() {
             >
               {/* Profile icon */}
               <div className="w-8 h-8 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] rounded-full flex items-center justify-center text-white font-semibold">
-                U
+                {currentUser.name.charAt(0)}
               </div>
             </button>
             {profileMenu && (
               <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded shadow-lg z-20">
                 <Link to="/Profile" className="block px-4 py-2 hover:bg-gray-200">View profile</Link>
-                
                 <a href="#" className="block px-4 py-2 hover:bg-gray-200">My Resources</a>
                 <a href="#" className="block px-4 py-2 hover:bg-gray-200">My Events</a>
                 <a href="#" className="block px-4 py-2 hover:bg-gray-200">Settings</a>
