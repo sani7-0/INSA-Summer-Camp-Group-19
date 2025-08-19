@@ -87,7 +87,7 @@ function EduConnectLogin() {
               Forget Password
             </Link>
             {/* Sign in Button */}
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300">
+            <button className="bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300">
               Sign in
             </button>
             {/* Sign in with Google logo */}

@@ -27,17 +27,17 @@ export default function RightSidebar() {
             <li className="flex items-start">
               <span className="mr-2 text-blue-500">•</span>
               <div>
-                <p className="font-medium">AI Bootcamp - Aug 12</p>
+                <p className="font-medium">Coding Challenge - Aug 30</p>
               </div>
             </li>
             <li className="flex items-start">
               <span className="mr-2 text-blue-500">•</span>
               <div>
-                <p className="font-medium">Scholarship Webinar - Aug 15</p>
+                <p className="font-medium">HackerRank Challenge - Sep 15</p>
               </div>
             </li>
           </ul>
-          <a href="#" className="mt-4 inline-block text-blue-600 hover:underline text-sm flex items-center">
+          <a href="/Events" className="mt-4 inline-block text-blue-600 hover:underline text-sm flex items-center">
             <Users className="w-4 h-4 mr-1" />
             View all Events
           </a>
@@ -77,7 +77,7 @@ export default function RightSidebar() {
               </div>
             </div>
           </div>
-          <a href="#" className="mt-4 inline-block text-blue-600 hover:underline text-sm flex items-center">
+          <a href="/frends" className="mt-4 inline-block text-blue-600 hover:underline text-sm flex items-center">
             <Users className="w-4 h-4 mr-1" />
             See All Connection
           </a>

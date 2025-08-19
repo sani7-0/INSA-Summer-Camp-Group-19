@@ -3,10 +3,10 @@ import { Home as HomeIcon, MessageCircle as MessageCircleIcon, Users as UsersIco
 
 function SidebarLeft() {
   const menuItems = [
-    { icon: MessageCircleIcon, name: 'My Posts' },
-    { icon: UsersIcon, name: 'Friends' },
-    { icon: BookmarkIcon, name: 'Bookmarks' },
-    { icon: SettingsIcon, name: 'Settings' },
+    { icon: MessageCircleIcon, name: 'My Posts', link: '/myposts' },
+    { icon: UsersIcon, name: 'Friends', link: '/frends' },
+    { icon: BookmarkIcon, name: 'Bookmarks', link: '/bookmarks' },
+    { icon: SettingsIcon, name: 'Settings', link: '/settings' },
   ];
   const user = {
     name: "John Doe",
@@ -73,7 +73,7 @@ function SidebarLeft() {
           {menuItems.map((item, index) => (
             <li key={index} className="mb-2">
               <a
-                href="#"
+                href={item.link}
                 className={`flex items-center p-3 rounded-lg hover:bg-gray-200 transition-colors duration-200
                   ${item.name === 'Dashboard' ? 'bg-gray-200 font-bold' : ''}`}
               >

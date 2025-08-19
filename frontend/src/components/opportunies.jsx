@@ -111,7 +111,7 @@ const FeaturedOpportunityCard = ({ title, role, location, description, applyLink
         href={applyLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300 self-end"
+        className="inline-flex items-center justify-center bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300 self-end"
       >
         Apply <LinkIcon size={18} className="ml-2" />
       </a>

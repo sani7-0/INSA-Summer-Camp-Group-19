@@ -110,7 +110,7 @@ export default function App() {
           />
         ))}
       </div>
-      <div className="text-center py-20 bg-blue-600 text-white">
+      <div className="text-center py-20 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] text-white">
         <h2 className="text-4xl md:text-5xl font-extrabold animate-pulse">
           Ready to Elevate Your Learning Experience?
         </h2>

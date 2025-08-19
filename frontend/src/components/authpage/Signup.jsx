@@ -35,7 +35,7 @@ function SignUpPage() {
             />
             <button
               type="submit"
-              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-colors"
+              className="bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition-colors"
             >
               sign up
             </button>
