@@ -109,7 +109,7 @@ const FriendsPage = () => {
   );
 
   return (
-    <div className="container mx-auto p-4 md:p-8 font-sans">
+    <div className="pt-24 container mx-auto p-4 md:p-8 font-sans">
       <h1 className="text-3xl font-extrabold text-gray-900 mb-8 text-center">Friends Dashboard</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">

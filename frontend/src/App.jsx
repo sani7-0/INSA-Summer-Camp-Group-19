@@ -30,6 +30,7 @@ import Discussion from './components/Discussion.jsx';
 import Saved, { SavedMessagesProvider } from './components/Saved.jsx';
 import Events from './components/Events.jsx';
 import Studywin from './components/Studywin.jsx';
+import Tutorials from './components/Tutorials.jsx';
 
 // Dashboard layout
 const DashboardLayout = ({ user }) => (
@@ -102,6 +103,7 @@ function AppLayout({ isLoggedIn, setIsLoggedIn }) {
         <Route path="/Discussion" element={<Discussion/>}/>
         <Route path="/Saved" element={<SavedMessagesProvider><Saved/></SavedMessagesProvider>}/>
         <Route path="/Studywin" element={<Studywin/>}/>
+        <Route path="/tutorials" element={<Tutorials/>}/>
 
         {/* Auth pages - supporting both route formats */}
         <Route path="/sign-up" element={<Signup />} />

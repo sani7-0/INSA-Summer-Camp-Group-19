@@ -176,7 +176,7 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className="pt-20 p-6 min-h-screen bg-gray-100 relative">
+    <div className=" p-6 min-h-screen bg-gray-100 relative">
       <div
         className="fixed inset-0 bg-center bg-no-repeat"
         style={{

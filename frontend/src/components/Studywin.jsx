@@ -121,11 +121,11 @@ export default function StudyWinPage() {
   }
 
   return (
-    <div className="pt-20 p-6 min-h-screen bg-gray-100 relative font-sans text-gray-800">
+    <div className=" p-6 min-h-screen bg-gray-100 relative font-sans text-gray-800">
       {/* Header */}
       <header className="rounded-2xl py-3 px-6 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] backdrop-blur-md shadow-lg mb-8">
         <div className="max-w-6xl mx-auto px-4 py-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">Study Win</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">Study Wins</h1>
           <h5 className="text-xl text-indigo-100">Track your progress, earn rewards, and achieve your learning goals!</h5>
         </div>
       </header>

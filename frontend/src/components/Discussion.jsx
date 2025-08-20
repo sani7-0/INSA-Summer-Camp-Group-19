@@ -400,7 +400,7 @@ const EduConnectForum = () => {
   }, [])
 
   return (
-    <div className="pt-20 p-6 min-h-screen bg-gray-100 relative font-sans text-gray-800">
+    <div className=" p-6 min-h-screen bg-gray-100 relative font-sans text-gray-800">
       {/* Header */}
       
       <header className=" rounded-2xl py-3 px-6 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] backdrop-blur-md shadow-lg">

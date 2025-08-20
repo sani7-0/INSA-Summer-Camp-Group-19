@@ -84,7 +84,7 @@ export default function ContestsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white pt-20 p-6 ">
+    <div className="min-h-screen bg-white p-6 ">
       {/* Header Section */}
       
       <header className="relative bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)]  rounded-2xl text-white text-center py-6 px-6 overflow-hidden">
@@ -99,7 +99,7 @@ export default function ContestsPage() {
           />
         </div>
 
-        <div className="relative z-10">
+        <div className="relative">
           <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Upcoming Events</h1>
           <p className="text-xl opacity-90 max-w-2xl mx-auto">
             Discover amazing coding competitions and programming challenges

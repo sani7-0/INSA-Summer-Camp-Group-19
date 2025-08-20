@@ -273,7 +273,7 @@ const SavedMessages = () => {
   }
 
   return (
-    <div className="pt-20 p-6 min-h-screen bg-gray-50">
+    <div className="p-6 min-h-screen bg-gray-50">
       <header className=" rounded-2xl py-3 px-6 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] backdrop-blur-md shadow-lg">
         
          <div className="max-w-6xl mx-auto px-4 py-4 text-center">
