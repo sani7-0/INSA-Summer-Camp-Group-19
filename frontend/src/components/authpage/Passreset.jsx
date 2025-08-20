@@ -44,6 +44,7 @@ function PasswordResetModal() {
             </svg>
           </div>
         </div>
+
         
         {!isSubmitted ? (
           <>
@@ -113,6 +114,7 @@ function PasswordResetModal() {
             </div>
           </>
         )}
+
       </div>
     </div>
   );

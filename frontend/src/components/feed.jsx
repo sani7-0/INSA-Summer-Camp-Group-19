@@ -7,6 +7,7 @@ const App = () => {
 
   // Dummy video data for the horizontal slider
   const recommendedVideos = [
+
     { id: 1, title: 'Web Dev Basics: HTML, CSS, JS Fundamentals for Beginners', channel: 'Code Academy', thumbnail: 'https://placehold.co/120x67/FEE2E2/EF4444?text=WebDev', videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ' },
     { id: 2, title: 'React Hooks Mastery: Understanding useState and useEffect', channel: 'JS Masters', thumbnail: 'https://placehold.co/120x67/DBEAFE/3B82F6?text=React', videoUrl: 'https://www.youtube.com/watch?v=Sj8A-Xf5q1E' },
     { id: 3, title: 'Build Your First Online Portfolio: Tips and Tricks', channel: 'Design Hub', thumbnail: 'https://placehold.co/120x67/D1FAE5/10B981?text=Design', videoUrl: 'https://www.youtube.com/watch?v=FqS-E48mX0A' },
@@ -15,6 +16,7 @@ const App = () => {
     { id: 6, title: 'AI for Beginners: A Gentle Introduction to Artificial Intelligence', channel: 'AI Insights', thumbnail: 'https://placehold.co/120x67/ECFDF5/059669?text=AI', videoUrl: 'https://www.youtube.com/watch?v=JmuxqQzFvGg' },
     { id: 7, title: 'Machine Learning Explained: Core Concepts and Applications', channel: 'Data Science', thumbnail: 'https://placehold.co/120x67/F0F9FF/0EA5E9?text=ML', videoUrl: 'https://www.youtube.com/watch?v=Kz1sQyM8G2A' },
     { id: 8, title: 'Bootcamp Prep: What to Expect and How to Succeed', channel: 'Study Zone', thumbnail: 'https://placehold.co/120x67/FDF2F8/EC4899?text=Bootcamp', videoUrl: 'https://www.youtube.com/watch?v=h3S4-A8N6aI' },
+
   ];
 
   // Dummy data for posts
@@ -102,7 +104,9 @@ const SinglePost = ({ post, onImageClick }) => {
   const [showComments, setShowComments] = useState(false);
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 
+
   const emojis = ['😀', '😂', '❤️', '👍', '🔥', '🎉', '🤔', '😢', '😮', '🙏', '💯', '🙌'];
+
 
   // Function to handle adding a new comment
   const handleCommentSubmit = (e) => {
@@ -152,7 +156,9 @@ const SinglePost = ({ post, onImageClick }) => {
           <div
             key={index}
             className="w-full h-48 sm:h-56 md:h-64 bg-gray-100 rounded-lg flex items-center justify-center text-gray-400 border border-dashed border-gray-300
+
                          cursor-pointer overflow-hidden group relative hover:shadow-lg transition-shadow duration-200"
+
             onClick={() => onImageClick(imageUrl)}
           >
             <img
@@ -257,9 +263,11 @@ const RecommendedVideosSection = ({ videos }) => {
       <h3 className="font-bold text-xl text-gray-800 mb-4">Recommended Videos for You</h3>
       <div className="overflow-x-auto flex space-x-4 pb-2 scrollbar-hide">
         {videos.map(video => (
+
           <a key={video.id} href={video.videoUrl} target="_blank" rel="noopener noreferrer">
             <MiniVideoCard {...video} />
           </a>
+
         ))}
       </div>
     </div>
@@ -270,7 +278,9 @@ const RecommendedVideosSection = ({ videos }) => {
 const MiniVideoCard = ({ thumbnail, title, channel }) => {
   return (
     <div className="flex-shrink-0 w-48 bg-white rounded-lg shadow-sm overflow-hidden cursor-pointer
+
                          transform transition-transform duration-300 hover:scale-[1.03] hover:shadow-md">
+
       <img
         src={thumbnail}
         alt={title}
@@ -302,7 +312,9 @@ const ExpandedImageViewer = ({ imageUrl, onClose }) => {
         <button
           onClick={onClose}
           className="absolute top-4 right-4 bg-white bg-opacity-30 text-white rounded-full p-2
+
                          hover:bg-opacity-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white"
+
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -314,3 +326,4 @@ const ExpandedImageViewer = ({ imageUrl, onClose }) => {
 };
 
 export default App;
+

@@ -9,6 +9,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true); // Set to 'false' to see the pre-login view
   const [menuOpen, setMenuOpen] = useState(false);
 
+
   // --- Start of Notification Feature ---
 
   const [notificationsOpen, setNotificationsOpen] = useState(false);
@@ -57,12 +58,15 @@ function App() {
   // --- End of Notification Feature ---
 
 
+
   const handleSearch = () => {
     console.log(`Searching for: ${searchTerm}`);
   };
   const user = {
     name: "John Doe",
+
     avatar: "https://i.pravatar.cc/150?img=3",
+
   };
 
 
@@ -128,7 +132,9 @@ function App() {
               {/* Overlay for darkening background */}
               <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
               {/* Content container - keep above overlays */}
+
               <div className="z-10 flex items-center space-x-3 p-2 min-h-[90px] rounded-lg">
+
                 <img
                   src={myLogo}
                   alt="Logo"
@@ -177,13 +183,16 @@ function App() {
                 </svg>
               </button>
               <div className="absolute hidden group-hover:block bg-gray-800 text-white mt-2 rounded shadow-lg w-48 z-20">
+
                 <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/tutorials">Tutorials</a>
                
                 <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/Studywin">Study Wins</a>
+
               </div>
             </div>
             <div className="relative group">
               <button className="px-4 py-2 hover:bg-gray-700 rounded flex items-center">
+
                 Explore
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -197,18 +206,23 @@ function App() {
             </div>
             <div className="relative group">
               <button className="px-4 py-2 hover:bg-gray-700 rounded flex items-center">
+
                 Community
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <div className="absolute hidden group-hover:block bg-gray-800 text-white mt-2 rounded shadow-lg w-48 z-20">
+
                 <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/Discussion">Discussion</a>
+
                 <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/frends">Friends</a>
                 <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/groups">Groups</a>
               </div>
             </div>
+
             <a href="/Events" className="px-4 py-2 hover:bg-gray-700 rounded flex items-center">Events</a>
+
           </div>
         ) : (
           // Pre-login navigation
@@ -226,8 +240,10 @@ function App() {
         >
           {isLoggedIn ? (
             <>
+
               {/* Icons and Search */}
               <div className="flex items-center space-x-2">
+
                 {/* Search Input */}
                 <div className="flex items-center space-x-2 w-full md:w-48">
                   <input
@@ -239,7 +255,9 @@ function App() {
                   />
                   <button
                     onClick={handleSearch}
+
                     className="p-2 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-blue-700 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300"
+
                     aria-label="Search"
                   >
                     <svg
@@ -257,6 +275,7 @@ function App() {
                     </svg>
                   </button>
                 </div>
+
 
                 {/* Notifications Icon and Dropdown */}
                 <div className="relative">
@@ -326,6 +345,7 @@ function App() {
                   </svg>
                 </Link>
 
+
                 {/* Profile Menu */}
                 <div className="relative">
                   <button
@@ -338,17 +358,21 @@ function App() {
                        src={user.avatar}
                        alt={user.name}
                        className="w-8 h-8 rounded-full mb-0"
+
                       />
+
                     </div>
                   </button>
                   {profileMenu && (
                     <div className="absolute right-0 mt-2 w-48 bg-gray-800 text-white rounded shadow-lg z-50">
+
                       <a href="/Profile" className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400">View Profile</a>
                       
                       <a href="/Resource" className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400">My Resources</a>
                       <a href="/Events" className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400">My Events</a>
                       <a href="/Setting" className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400">Settings</a>
                       
+
                       <a
                         href="#"
                         className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400"
@@ -367,7 +391,9 @@ function App() {
               <a href="/sign-in" className="hover:text-gray-300">Sign In</a>
               <a
                 href="/sign-up"
+
                 className="bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300"
+
               >
                 Sign Up
               </a>
@@ -435,4 +461,6 @@ function App() {
   );
 }
 
+
 export default App;
+
