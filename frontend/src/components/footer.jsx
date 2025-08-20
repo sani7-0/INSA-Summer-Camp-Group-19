@@ -74,10 +74,8 @@ function Footer() {
                 placeholder="Your email"
                 className="w-full p-2 rounded-l border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-<<<<<<
-              <button className="bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-blue-700 text-white font-semibold px-4 rounded-r">
->>>>>>
-                Subscribe
+      <button className="bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-blue-700 text-white font-semibold px-4 rounded-r">
+       Subscribe
               </button>
             </div>
           </div>
