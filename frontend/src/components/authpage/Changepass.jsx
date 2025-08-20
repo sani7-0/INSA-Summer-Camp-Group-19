@@ -149,7 +149,7 @@ function ChangePasswordModal() {
               disabled={!isFormValid}
               className={`w-full max-w-xs text-white font-semibold py-2 px-4 rounded-lg shadow-lg transition duration-300 ${
                 isFormValid
-                  ? 'bg-blue-500 hover:bg-blue-600'
+                  ? 'bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-blue-600'
                   : 'bg-gray-400 cursor-not-allowed'
               }`}
             >

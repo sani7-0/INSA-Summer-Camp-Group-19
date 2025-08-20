@@ -9,12 +9,64 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true); // Set to 'false' to see the pre-login view
   const [menuOpen, setMenuOpen] = useState(false);
 
+
+  // --- Start of Notification Feature ---
+
+  const [notificationsOpen, setNotificationsOpen] = useState(false);
+
+  // Mock data for notifications with a new 'senderProfileUrl' property
+  const [notifications, setNotifications] = useState([
+    {
+      id: 1,
+      senderName: "John Doe",
+      senderAvatar: "https://i.pravatar.cc/150?img=1",
+      message: "Hi! Letâ€™s connect.",
+      timestamp: "2h ago",
+      isRead: false,
+      senderProfileUrl: "/profile/john-doe",
+    },
+    {
+      id: 2,
+      senderName: "Sarah Lee",
+      senderAvatar: "https://i.pravatar.cc/150?img=2",
+      message: "Looking to join your study group.",
+      timestamp: "1d ago",
+      isRead: false,
+      senderProfileUrl: "/profile/sarah-lee",
+    },
+    {
+      id: 3,
+      senderName: "Mike Ross",
+      senderAvatar: "https://i.pravatar.cc/150?img=4",
+      message: "mentioned you in a comment.",
+      timestamp: "3d ago",
+      isRead: true,
+      senderProfileUrl: "/profile/mike-ross",
+    },
+  ]);
+
+  const unreadCount = notifications.filter((n) => !n.isRead).length;
+
+  const handleNotificationClick = (id) => {
+    setNotifications(
+      notifications.map((notification) =>
+        notification.id === id ? { ...notification, isRead: true } : notification
+      )
+    );
+  };
+
+  // --- End of Notification Feature ---
+
+
+
   const handleSearch = () => {
     console.log(`Searching for: ${searchTerm}`);
   };
   const user = {
     name: "John Doe",
-    avatar: "https://i.pravatar.cc/150?img=3", // placeholder avatar
+
+    avatar: "https://i.pravatar.cc/150?img=3",
+
   };
 
 
@@ -80,7 +132,9 @@ function App() {
               {/* Overlay for darkening background */}
               <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg"></div>
               {/* Content container - keep above overlays */}
-              <div className="z-10 flex items-center space-x-3 p-2 min-h-[90px] rounded-lg"> 
+
+              <div className="z-10 flex items-center space-x-3 p-2 min-h-[90px] rounded-lg">
+
                 <img
                   src={myLogo}
                   alt="Logo"
@@ -129,13 +183,16 @@ function App() {
                 </svg>
               </button>
               <div className="absolute hidden group-hover:block bg-gray-800 text-white mt-2 rounded shadow-lg w-48 z-20">
-                <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="#">Tutorials</a>
-                <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="#">Articles</a>
-                <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="#">Study Wins</a>
+
+                <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/tutorials">Tutorials</a>
+               
+                <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/Studywin">Study Wins</a>
+
               </div>
             </div>
             <div className="relative group">
               <button className="px-4 py-2 hover:bg-gray-700 rounded flex items-center">
+
                 Explore
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -143,24 +200,29 @@ function App() {
               </button>
               <div className="absolute hidden group-hover:block bg-gray-800 text-white mt-2 rounded shadow-lg w-48 z-20">
                 <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/opportunites">Opportunities</a>
-                <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="#">Events</a>
-                <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="#">Saved</a>
+                
+                <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/Saved">Saved</a>
               </div>
             </div>
             <div className="relative group">
               <button className="px-4 py-2 hover:bg-gray-700 rounded flex items-center">
+
                 Community
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
               <div className="absolute hidden group-hover:block bg-gray-800 text-white mt-2 rounded shadow-lg w-48 z-20">
-                <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="#">Discussion</a>
+
+                <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/Discussion">Discussion</a>
+
                 <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/frends">Friends</a>
                 <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/groups">Groups</a>
               </div>
             </div>
-            <a href="#" className="px-4 py-2 hover:bg-gray-700 rounded flex items-center">Events</a>
+
+            <a href="/Events" className="px-4 py-2 hover:bg-gray-700 rounded flex items-center">Events</a>
+
           </div>
         ) : (
           // Pre-login navigation
@@ -178,8 +240,10 @@ function App() {
         >
           {isLoggedIn ? (
             <>
-              {/* Icons and Search - stack vertically on small screens */}
-              <div className="flex items-center space-x-2 flex-col md:flex-row w-full md:w-auto">
+
+              {/* Icons and Search */}
+              <div className="flex items-center space-x-2">
+
                 {/* Search Input */}
                 <div className="flex items-center space-x-2 w-full md:w-48">
                   <input
@@ -191,7 +255,9 @@ function App() {
                   />
                   <button
                     onClick={handleSearch}
-                    className="p-2 bg-blue-600 hover:bg-blue-700 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300"
+
+                    className="p-2 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-blue-700 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-300"
+
                     aria-label="Search"
                   >
                     <svg
@@ -210,19 +276,75 @@ function App() {
                   </button>
                 </div>
 
-                {/* Notifications */}
-                <button className="p-2 rounded hover:bg-gray-700" title="Notifications">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.003 6.003 0 00-4-5.659V4a2 2 0 10-4 0v1.341C8.67 6.165 8 7.388 8 8.75V14c0 .538-.214 1.055-.595 1.436L6 17h5" />
-                  </svg>
-                </button>
+
+                {/* Notifications Icon and Dropdown */}
+                <div className="relative">
+                  <button
+                    onClick={() => setNotificationsOpen(!notificationsOpen)}
+                    className="p-2 rounded hover:bg-gray-700 relative"
+                    title="Notifications"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.003 6.003 0 00-4-5.659V4a2 2 0 10-4 0v1.341C8.67 6.165 8 7.388 8 8.75V14c0 .538-.214 1.055-.595 1.436L6 17h5" />
+                    </svg>
+                    {/* Notification Badge */}
+                    {unreadCount > 0 && (
+                      <span className="absolute top-1 right-1 flex h-4 w-4">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-4 w-4 bg-red-500 text-xs items-center justify-center">
+                          {unreadCount}
+                        </span>
+                      </span>
+                    )}
+                  </button>
+
+                  {/* Notification Dropdown Panel */}
+                  {notificationsOpen && (
+                    <div className="absolute right-0 mt-2 w-80 bg-gray-800 text-white rounded-lg shadow-lg z-50 border border-gray-700">
+                      <div className="p-3 font-bold border-b border-gray-700">Notifications</div>
+                      <div className="max-h-96 overflow-y-auto">
+                        {notifications.length > 0 ? (
+                          notifications.map((notif) => (
+                            <Link
+                              key={notif.id}
+                              to={notif.senderProfileUrl}
+                              className={`flex items-start p-3 hover:bg-gray-700 cursor-pointer border-b border-gray-700/50 ${
+                                !notif.isRead ? 'bg-blue-900/20' : ''
+                              }`}
+                              onClick={() => handleNotificationClick(notif.id)}
+                            >
+                              <img src={notif.senderAvatar} alt={notif.senderName} className="w-10 h-10 rounded-full mr-3" />
+                              <div className="flex-1">
+                                <p className="text-sm">
+                                  <span className="font-bold">{notif.senderName}</span>
+                                  <span className="font-normal text-gray-400"> {notif.message}</span>
+                                </p>
+                                <p className="text-xs text-blue-400 mt-1">{notif.timestamp}</p>
+                              </div>
+                              {!notif.isRead && (
+                                <div className="w-2 h-2 bg-blue-500 rounded-full ml-auto self-center"></div>
+                              )}
+                            </Link>
+                          ))
+                        ) : (
+                          <p className="p-4 text-center text-gray-400">No new notifications</p>
+                        )}
+                      </div>
+                      <Link to="/frends" className="block text-center py-2 text-sm text-blue-400 hover:bg-gray-700 rounded-b-lg">
+                        View All
+                      </Link>
+                    </div>
+                  )}
+                </div>
+
 
                 {/* Messages */}
-                <button className="p-2 rounded hover:bg-gray-700" title="Messages">
+                <Link to="/#"  className="p-2 rounded hover:bg-gray-700" title="Messages">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M21 12c0 4-4 7-9 7s-9-3-9-7 4-7 9-7 9 3 9 7z" />
                   </svg>
-                </button>
+                </Link>
+
 
                 {/* Profile Menu */}
                 <div className="relative">
@@ -236,17 +358,21 @@ function App() {
                        src={user.avatar}
                        alt={user.name}
                        className="w-8 h-8 rounded-full mb-0"
-        />
+
+                      />
+
                     </div>
                   </button>
                   {profileMenu && (
                     <div className="absolute right-0 mt-2 w-48 bg-gray-800 text-white rounded shadow-lg z-50">
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400">View Profile</a>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400">Edit Profile</a>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400">My Resources</a>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400">My Events</a>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400">Settings</a>
-                      <a href="#" className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400">Help & Support</a>
+
+                      <a href="/Profile" className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400">View Profile</a>
+                      
+                      <a href="/Resource" className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400">My Resources</a>
+                      <a href="/Events" className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400">My Events</a>
+                      <a href="/Setting" className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400">Settings</a>
+                      
+
                       <a
                         href="#"
                         className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400"
@@ -265,7 +391,9 @@ function App() {
               <a href="/sign-in" className="hover:text-gray-300">Sign In</a>
               <a
                 href="/sign-up"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300"
+
+                className="bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300"
+
               >
                 Sign Up
               </a>
@@ -333,4 +461,6 @@ function App() {
   );
 }
 
+
 export default App;
+

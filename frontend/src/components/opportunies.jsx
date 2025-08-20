@@ -3,7 +3,9 @@ import { Briefcase, Lightbulb, GraduationCap, Trophy, Users, Search, Link as Lin
 
 const App = () => {
   return (
-    <div className="min-h-screen bg-gray-50 p-4 sm:p-8 flex flex-col items-center">
+
+    <div className="pt-28 min-h-screen bg-gray-50 p-4 sm:p-8 flex flex-col items-center">
+
       {/* Header Section */}
       <header className="w-full max-w-4xl text-center mb-12 px-4 py-8 bg-white rounded-lg shadow-lg">
         <h1 className="text-4xl sm:text-5xl font-extrabold text-indigo-800 mb-4 tracking-tight">
@@ -111,7 +113,9 @@ const FeaturedOpportunityCard = ({ title, role, location, description, applyLink
         href={applyLink}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300 self-end"
+
+        className="inline-flex items-center justify-center bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] text-white font-semibold py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors duration-300 self-end"
+
       >
         Apply <LinkIcon size={18} className="ml-2" />
       </a>

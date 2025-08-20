@@ -1,10 +1,19 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-function EduConnectLogin() {
+
+function EduConnectLogin({ onLogin }) {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle login logic here
+    if (onLogin) {
+      onLogin();
+    }
   };
 
   return (
@@ -19,7 +28,7 @@ function EduConnectLogin() {
         {/* Left Side: Sign-in Form */}
         <div className="bg-white rounded-lg p-8 w-full md:w-1/2 shadow-lg">
           <h2 className="text-2xl font-semibold mb-4">Sign in</h2>
-          <form className="flex flex-col space-y-4">
+          <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
             {/* Email Input */}
             <div>
               <label className="block text-sm font-medium mb-1" htmlFor="email">
@@ -30,6 +39,7 @@ function EduConnectLogin() {
                 id="email"
                 placeholder="Email"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                required
               />
             </div>
             {/* Password Input with Eye Icon */}
@@ -43,6 +53,7 @@ function EduConnectLogin() {
                   id="password"
                   placeholder="Password"
                   className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  required
                 />
                 {/* Eye Icon to toggle password visibility */}
                 <button
@@ -87,11 +98,17 @@ function EduConnectLogin() {
               Forget Password
             </Link>
             {/* Sign in Button */}
-            <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300">
+            <button 
+              type="submit"
+              className="bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300"
+            >
               Sign in
             </button>
             {/* Sign in with Google logo */}
-            <button className="flex items-center justify-center border border-gray-300 rounded-md py-2 px-4 hover:bg-gray-100 transition duration-300">
+            <button 
+              type="button"
+              className="flex items-center justify-center border border-gray-300 rounded-md py-2 px-4 hover:bg-gray-100 transition duration-300"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 533.5 544.3"

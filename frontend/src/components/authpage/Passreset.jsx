@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function PasswordResetModal() {
+  const [email, setEmail] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email) {
+      setIsSubmitted(true);
+      // Handle password reset logic here
+      console.log('Password reset requested for:', email);
+    }
+  };
+
   return (
     <div
       className="flex items-center justify-center min-h-screen bg-cover bg-center"
@@ -14,7 +26,7 @@ function PasswordResetModal() {
       <div className="bg-gray-200 p-8 rounded-xl max-w-md w-full shadow-2xl relative">
         {/* Lock Icon */}
         <div className="flex justify-center mb-6">
-          <div >
+          <div>
             {/* Larger Lock SVG */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -32,28 +44,77 @@ function PasswordResetModal() {
             </svg>
           </div>
         </div>
-        {/* Title */}
-        <h2 className="text-2xl font-bold text-center mb-2 text-gray-800">Password Reset</h2>
-        {/* Subtitle */}
-        <p className="text-center text-gray-600 mb-6 text-sm">
-          Enter the email address linked to your <b>EduConnect</b> account, and we’ll send you a link to reset your password.
-        </p>
-        {/* Email Input */}
-        <input
-          type="email"
-          placeholder="Enter your email address"
-          className="w-full px-4 py-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
-        />
-        {/* Return to Sign-in Link */}
-        <div className="mt-3 flex justify-end">
-          <Link to="/sign-in" className="text-blue-600 text-sm hover:underline">
-            Return to Sign in
-          </Link>
-        </div>
-        {/* Send Reset Link Button */}
-        <button className="w-full mt-6 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-xl shadow-lg focus:outline-none transition duration-300">
-          Send Reset Link
-        </button>
+
+        
+        {!isSubmitted ? (
+          <>
+            {/* Title */}
+            <h2 className="text-2xl font-bold text-center mb-2 text-gray-800">Password Reset</h2>
+            {/* Subtitle */}
+            <p className="text-center text-gray-600 mb-6 text-sm">
+              Enter the email address linked to your <b>EduConnect</b> account, and we'll send you a link to reset your password.
+            </p>
+            
+            <form onSubmit={handleSubmit}>
+              {/* Email Input */}
+              <input
+                type="email"
+                placeholder="Enter your email address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-3 border border-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+                required
+              />
+              
+              {/* Return to Sign-in Link */}
+              <div className="mt-3 flex justify-end">
+                <Link to="/sign-in" className="text-blue-600 text-sm hover:underline">
+                  Return to Sign in
+                </Link>
+              </div>
+              
+              {/* Send Reset Link Button */}
+              <button 
+                type="submit"
+                className="w-full mt-6 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-xl shadow-lg focus:outline-none transition duration-300"
+              >
+                Send Reset Link
+              </button>
+            </form>
+          </>
+        ) : (
+          <>
+            {/* Success Message */}
+            <div className="text-center">
+              <div className="mb-4">
+                <svg
+                  className="h-16 w-16 text-green-500 mx-auto"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h2 className="text-2xl font-bold mb-2 text-gray-800">Check Your Email</h2>
+              <p className="text-gray-600 mb-6 text-sm">
+                We've sent a password reset link to <b>{email}</b>. Please check your inbox and follow the instructions.
+              </p>
+              <Link 
+                to="/sign-in" 
+                className="inline-block bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl shadow-lg transition duration-300"
+              >
+                Back to Sign In
+              </Link>
+            </div>
+          </>
+        )}
+
       </div>
     </div>
   );

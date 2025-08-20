@@ -39,7 +39,9 @@ function Welcome({ isLoggedIn }) {
                 className="bg-gray-800 text-white rounded-full py-3 px-6 mb-4 md:mb-0 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-shadow duration-300"
               />
               <Link to="/sign-up">
-                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">
+
+                <button className="bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition-colors duration-300">
+
                   Start
                 </button>
               </Link>
