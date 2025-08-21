@@ -39,43 +39,33 @@ const GroupPage = () => {
   const [showCreateModal, setShowCreateModal] = useState(false);
   const [groups, setGroups] = useState(initialGroups);
 
-  // Function to handle clicking on a group card
   const handleGroupClick = (groupId) => {
-    // In a real application, you would navigate to the group's specific page
-    console.log(`Navigating to group: ${groupId}`);
-    // Replaced alert with a custom message box for better UX in a real app
-    // For this demo, we'll keep the alert for simplicity given the environment
     alert(`You clicked on group: ${groupId}. (Navigation logic goes here)`);
   };
 
-  // Function to handle creating a new group
   const handleCreateGroup = (newGroupData) => {
     const newGroupId = newGroupData.name.toLowerCase().replace(/\s+/g, '-');
     const newGroup = {
       id: newGroupId,
       ...newGroupData,
-      features: newGroupData.features.split(',').map(f => f.trim()).filter(f => f !== ''), // Convert comma-separated string to array, filter empty strings
+      features: newGroupData.features.split(',').map(f => f.trim()).filter(f => f !== ''),
     };
     setGroups([...groups, newGroup]);
-    setShowCreateModal(false); // Close the modal after creation
-    alert('Group created successfully!'); // Replaced alert with a custom message
+    setShowCreateModal(false);
+    alert('Group created successfully!');
   };
 
   return (
     <div className="min-h-screen bg-gray-100 p-4 sm:p-8 font-inter">
       <div className="max-w-6xl mx-auto">
-        {/* Page Title */}
         <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-8 sm:mb-12">
           Study Groups – EduConnect 👥
         </h1>
 
-        {/* Create Group Section - Now a compact card at the top */}
         <div className="bg-white shadow-xl rounded-xl p-5 sm:p-6 mb-8 flex items-center justify-between">
           <div className="flex-grow">
             <h2 className="text-2xl font-bold text-gray-700">Start Your Own Group!</h2>
-            <p className="text-gray-600 text-sm mt-1">
-              Click the `+` to create a new study group and invite peers.
-            </p>
+            
           </div>
           <button
             onClick={() => setShowCreateModal(true)}
@@ -86,7 +76,6 @@ const GroupPage = () => {
           </button>
         </div>
 
-        {/* Your Groups Section */}
         <div className="bg-white shadow-xl rounded-xl p-6 sm:p-8 mb-8">
           <h2 className="text-3xl font-bold text-gray-700 mb-6">Your Groups:</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -114,18 +103,14 @@ const GroupPage = () => {
         </div>
       </div>
 
-      {/* Create Group Modal */}
       {showCreateModal && (
-        <CreateGroupModal
-          onClose={() => setShowCreateModal(false)}
-          onCreate={handleCreateGroup}
-        />
+        <CreateGroupModal onClose={() => setShowCreateModal(false)} onCreate={handleCreateGroup} />
       )}
     </div>
   );
 };
 
-// Modal Component for creating a new group
+// Modal Component
 const CreateGroupModal = ({ onClose, onCreate }) => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -136,14 +121,13 @@ const CreateGroupModal = ({ onClose, onCreate }) => {
     if (name && description) {
       onCreate({ name, description, features });
     } else {
-      // In a real application, replace this with a custom alert/toast notification
       alert('Please fill in Group Name and Description.');
     }
   };
 
   return (
-    <div className="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center p-4 z-50 animate-fade-in">
-      <div className="bg-white rounded-lg shadow-2xl w-full max-w-lg p-6 sm:p-8 transform transition-all duration-300 scale-95 opacity-0 animate-scale-in">
+    <div className="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center p-4 z-50">
+      <div className="bg-white rounded-lg shadow-2xl w-full max-w-lg p-6 sm:p-8 transform transition-all duration-300 scale-100 opacity-100">
         <h2 className="text-2xl font-bold text-gray-800 mb-5">Create New Study Group</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
