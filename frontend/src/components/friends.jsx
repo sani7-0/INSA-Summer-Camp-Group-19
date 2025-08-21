@@ -28,6 +28,17 @@ const initialFriendsData = {
   ],
 };
 
+// --- FIX ---
+// The Card component is moved outside of the FriendsPage component.
+// This prevents it from being redeclared on every render, which solves the input focus issue.
+const Card = ({ title, children }) => (
+  <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+    <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center">{title}</h2>
+    {children}
+  </div>
+);
+
+
 const FriendsPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [friendsData, setFriendsData] = useState(initialFriendsData);
@@ -82,7 +93,7 @@ const FriendsPage = () => {
         break;
       }
       default:
-        console.log('Unknown action');
+        console.log(`Action: ${action} for user ${userName} (ID: ${userId})`);
     }
   };
 
@@ -101,16 +112,8 @@ const FriendsPage = () => {
       )
     : [];
 
-  const Card = ({ title, children }) => (
-    <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
-      <h2 className="text-xl font-bold text-gray-800 mb-4 flex items-center">{title}</h2>
-      {children}
-    </div>
-  );
-
   return (
-    <div className="pt-24 container mx-auto p-4 md:p-8 font-sans">
-
+    <div className="container mx-auto p-4 md:p-8 font-sans">
       <h1 className="text-3xl font-extrabold text-gray-900 mb-8 text-center">Friends Dashboard</h1>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
