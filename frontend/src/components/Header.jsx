@@ -182,7 +182,7 @@ function App() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute hidden group-hover:block bg-gray-800 text-white mt-2 rounded shadow-lg w-48 z-20">
+              <div className="absolute hidden group-hover:block bg-gray-800 text-white  rounded shadow-lg w-48 z-20">
 
                 <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/tutorials">Tutorials</a>
                
@@ -198,7 +198,7 @@ function App() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute hidden group-hover:block bg-gray-800 text-white mt-2 rounded shadow-lg w-48 z-20">
+              <div className="absolute hidden group-hover:block bg-gray-800 text-white  rounded shadow-lg w-48 z-20">
                 <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/opportunites">Opportunities</a>
                 
                 <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/Saved">Saved</a>
@@ -212,7 +212,7 @@ function App() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
               </button>
-              <div className="absolute hidden group-hover:block bg-gray-800 text-white mt-2 rounded shadow-lg w-48 z-20">
+              <div className="absolute hidden group-hover:block bg-gray-800 text-white  rounded shadow-lg w-48 z-20">
 
                 <a className="block px-4 py-2 hover:bg-gray-700 hover:text-blue-400 transition" href="/Discussion">Discussion</a>
 
