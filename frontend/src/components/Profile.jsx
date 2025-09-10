@@ -186,7 +186,7 @@ const ProfilePage = () => {
       ></div>
       <div className="fixed inset-0 bg-black bg-opacity-40" style={{ zIndex: -1 }}></div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative">
         {isEditing ? (
           <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden">
             <div
