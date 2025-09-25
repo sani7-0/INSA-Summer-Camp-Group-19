@@ -250,7 +250,8 @@ const ProfilePage = () => {
               </div>
             </div>
 
-            <div className="p-8 md:p-12">
+           <div className="pt-32 md:pt-12 p-8 md:p-12">
+
               <button
                 onClick={handleBackToProfile}
                 className="mb-6 text-purple-600 hover:text-purple-800 transition-colors duration-200 flex items-center space-x-2"
@@ -377,11 +378,12 @@ const ProfilePage = () => {
               </div>
             </div>
 
-            <div className="p-8 md:p-12">
+            <div className="pt-48 p-8 md:pt-32 md:p-12">
+
               <div className="text-center mb-8 relative">
                 <button
                   onClick={() => setIsEditing(true)}
-                  className="absolute top-3 right-4 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] text-white px-8 py-3 rounded-full font-semibold hover:from-purple-700 hover:to-purple-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                  className="block top-3 right-4 bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] text-white px-8 py-3 rounded-full font-semibold hover:from-purple-700 hover:to-purple-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                 >
                   Edit Profile
                 </button>
