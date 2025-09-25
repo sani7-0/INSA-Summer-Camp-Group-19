@@ -7,7 +7,7 @@ import {
 
 const initialFriendsData = {
   incoming: [
-    { id: 'inc1', name: 'John Doe', message: 'Hi! Let’s connect.', type: 'incoming' },
+    { id: 'inc1', name: 'John Doe', message: 'Hi! Letâ€™s connect.', type: 'incoming' },
     { id: 'inc2', name: 'Sarah Lee', message: 'Looking to join your study group.', type: 'incoming' },
   ],
   pending: [
@@ -113,9 +113,10 @@ const FriendsPage = () => {
     : [];
 
   return (
-    <div className="container mx-auto p-4 md:p-8 font-sans">
-      <h1 className="text-3xl font-extrabold text-gray-900 mb-8 text-center">Friends Dashboard</h1>
-
+    <div className="min-h-screen bg-white p-6 ">
+      <header className="relative bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)]  rounded-2xl text-white text-center py-8 px-6 overflow-hidden">
+      <h1 className=" relative text-2xl md:text-6xl font-bold mb-4 drop-shadow-lg">Friends Dashboard</h1>
+        </header>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
           {/* Incoming Requests */}
@@ -175,7 +176,7 @@ const FriendsPage = () => {
                       <p className="font-semibold text-gray-800">{friend.name}</p>
                       <div className="flex items-center text-sm text-gray-500">
                         <span className={`w-2 h-2 rounded-full mr-2 ${friend.online ? 'bg-green-500' : 'bg-red-500'}`}></span>
-                        {friend.status} • {friend.lastActive}
+                        {friend.status} â€¢ {friend.lastActive}
                       </div>
                     </div>
                   </div>
@@ -297,7 +298,7 @@ const FriendsPage = () => {
 
           {/* Tip Box */}
           <div className="bg-blue-100 border-l-4 border-blue-500 text-blue-800 p-4 rounded-lg mt-6 shadow-md">
-            <p className="font-semibold mb-1">💡 Tip:</p>
+            <p className="font-semibold mb-1">ðŸ’¡ Tip:</p>
             <p className="text-sm">Friends online can instantly collaborate in study groups or send messages for quick help!</p>
           </div>
         </div>
