@@ -57,10 +57,12 @@ const GroupPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 p-4 sm:p-8 font-inter">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-8 sm:mb-12">
-          Study Groups – EduConnect 👥
-        </h1>
+       <div className="min-h-screen bg-white p-6 ">
+      <header className="relative bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)]  rounded-2xl text-white text-center py-8 px-6 overflow-hidden">
+      <h1 className=" relative text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Study Groups – EduConnect 👥</h1>
+        </header>
+        
+        
 
         <div className="bg-white shadow-xl rounded-xl p-5 sm:p-6 mb-8 flex items-center justify-between">
           <div className="flex-grow">
